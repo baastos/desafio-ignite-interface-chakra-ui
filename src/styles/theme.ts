@@ -22,19 +22,19 @@ export const theme = extendTheme({
     styles:{
       global: (props) => ({
         ".swiper-button-next": {
-          right: 10,
+          right: 5,
           _after: {
             color: "yellow.500"
           }
         },
         ".swiper-button-prev": {
-          left: 10,
+          left: 5,
           _after: {
             color: "yellow.500"
           }
         },
         ".swiper-pagination-bullet":{
-          width: "4",
+          width:  "4",
           height: "4",
           bg: "#999999",
           opacity: 0.9

@@ -42,7 +42,15 @@ export default function Home() {
 
       <TravelTypes />
 
-      <Box w={["60px", "90px"]} mx="auto" h="2px" bg="brand.700" my={["9", "20"]} />
+      <Box
+        w={["60px",
+          "90px"]}
+        mx="auto"
+        h="2px"
+        bg="brand.700"
+        my={["9",
+          "20"]}
+      />
 
       <Heading
         mb={["5", "14"]}

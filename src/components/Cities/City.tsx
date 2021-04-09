@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Text, useColorMode } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import ReactCountryFlag from 'react-country-flag'
 
 interface CityProps {

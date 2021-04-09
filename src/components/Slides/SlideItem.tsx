@@ -26,13 +26,11 @@ export function SlideItem({ image, name, summary, url }: SlideItemProps) {
         >
             <Link href={`continents/${url}`} passHref>
                 <a>
-                    <Heading color="brand.100" fontSize="5xl" fontWeight="700">{name}</Heading>
-                    <Text fontSize="2xl" color="brand.100" fontWeight="700" mt="4">{summary}</Text>
+                    <Heading color="brand.100" fontSize={["lg", "5xl"]} fontWeight="700">{name}</Heading>
+                    <Text fontSize={["sm", "2xl"]} color="brand.100" fontWeight="700" mt={["10", "4"]}>{summary}</Text>
                 </a>
 
             </Link>
-
-
         </Flex>
 
     )

@@ -29,7 +29,6 @@ interface ContinentProps {
     }
 }
 
-
 export default function Continent({ continent }: ContinentProps) {
     return (
         <>
@@ -37,7 +36,6 @@ export default function Continent({ continent }: ContinentProps) {
                 <title>Worldrip | {continent.name}</title>
             </Head>
             <Header />
-
             <Flex
                 w="100%"
                 h={["150px", "500px"]}
@@ -46,7 +44,16 @@ export default function Continent({ continent }: ContinentProps) {
                 bgRepeat="no-repeat"
                 bgSize="cover">
 
-                <Flex align={["center", "flex-end"]} justify={["center", "flex-start"]} mb="20" w="100%" maxW={1160} mx="auto">
+                <Flex
+                    align={["center",
+                        "flex-end"]}
+                    justify={["center",
+                        "flex-start"]}
+                    mb="20"
+                    w="100%"
+                    maxW={1160}
+                    mx="auto"
+                >
                     <Heading
                         color="brand.100"
                         fontWeight="600"
@@ -55,7 +62,7 @@ export default function Continent({ continent }: ContinentProps) {
                     >{continent.name}</Heading>
                 </Flex>
             </Flex>
-            <Flex direction="column" maxW={1160} mx="auto" px="24" mb="10">
+            <Flex direction="column" maxW={1160} mx="auto" px={["5", "20"]} mb="10">
                 <Grid align="center" templateColumns={["1fr", "1.2fr 1fr"]} gap={[5, 20]} my={[8, 20]}>
                     <Text fontSize={["lg", "2xl"]} color="brand.700" textAlign="justify" >
                         {continent.description}
@@ -63,33 +70,46 @@ export default function Continent({ continent }: ContinentProps) {
 
                     <Stack direction="row" justify="space-between" align="center" >
                         <Box textAlign="center">
-                            <Heading color="yellow.500" fontWeight="600" fontSize="5xl">{continent.languages}</Heading>
-                            <Text color="brand.700" fontWeight="600">Países</Text>
+                            <Heading
+                                color="yellow.500"
+                                fontWeight="600"
+                                fontSize={["2xl",
+                                    "5xl"]}>
+                                {continent.languages}
+                            </Heading>
+                            <Text fontSize={["sm", "md"]} color="brand.700" fontWeight="600">Países</Text>
                         </Box>
 
                         <Box textAlign="center">
-                            <Heading color="yellow.500" fontWeight="600" fontSize="5xl">{continent.countries}</Heading>
-                            <Text color="brand.700" fontWeight="600">Linguas</Text>
+                            <Heading color="yellow.500" fontWeight="600" fontSize={["2xl", "5xl"]}>{continent.countries}</Heading>
+                            <Text color="brand.700" fontSize={["sm", "md"]} fontWeight="600">Linguas</Text>
                         </Box>
 
                         <Box textAlign="center">
-                            <Heading color="yellow.500" fontWeight="600" fontSize="5xl">{continent.topCities}</Heading>
-                            <Text color="brand.700" fontWeight="600">cidades {continent.topCities - continent.cities.length}+
-                            <Popover>
+                            <Heading color="yellow.500" fontWeight="600" fontSize={["2xl", "5xl"]}>{continent.topCities}</Heading>
+                            <Text
+                                fontSize={["sm", "md"]}
+                                color="brand.700"
+                                fontWeight="600">
+                                cidades {continent.topCities - continent.cities.length}+
+                                    <Popover >
                                     <PopoverTrigger>
                                         <IconButton
+                                            w="10px"
+                                            h="10px"
+
                                             aria-label={continent.name}
                                             bg="transparent"
                                             p="0"
                                             m="0">
                                             <Icon
                                                 as={RiInformationLine}
-                                                color="text"
-                                                fontSize={12}
-                                                justifySelf="start"
+                                                color="brand.700"
+                                                fontSize={16}
+
                                             />
                                         </IconButton>
-                                    </PopoverTrigger>
+                                    </PopoverTrigger >
                                     <PopoverContent fontSize={["sm", "md"]} color="text" borderColor="yellow.300">
                                         <PopoverArrow />
                                         <PopoverCloseButton />
@@ -98,7 +118,6 @@ export default function Continent({ continent }: ContinentProps) {
                                 </Popover>
                             </Text>
                         </Box>
-
                     </Stack>
                 </Grid>
                 <Cities cities={continent.cities} topCities={continent.topCities} />
@@ -135,8 +154,6 @@ export const getStaticProps: GetStaticProps<ContinentProps> = async (context) =>
     const continents = response.data;
 
     const continent = continents.find(continent => continent.url === url);
-    console.log(continent);
-
 
     return {
         props: {

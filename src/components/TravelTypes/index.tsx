@@ -5,15 +5,14 @@ export function TravelTypes() {
     return (
         <Grid
             flexWrap="wrap"
-            gridTemplateColumns="repeat(5,1fr)"
-            gap={5}
-            maxW={1160}
+            gridTemplateColumns={["1fr 1fr", "repeat(5,1fr)"]}
+            gap={[1, 5]}
+            maxW={[280, 1160]}
             width="100%"
             mx="auto"
-            justify="space-between"
-            mt="20"
+            mt={["10", "32"]}
         >
-            <GridItem>
+            <GridItem >
                 <TypeItem icon="cocktail" title="Vida noturna" />
             </GridItem>
 
@@ -36,12 +35,6 @@ export function TravelTypes() {
                 <TypeItem icon="earth" title="E mais..." />
 
             </GridItem>
-
-
-
-
-
-
         </Grid>
     )
 }
